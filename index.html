@@ -1,7 +1,29 @@
-<!doctype html><html><head><script>
-      window.onload = function load() {
-        window.open('', '_self', '');
-        window.close();
-      };
-</script></head><body></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown and Close</title>
+    <script>
+        window.onload = function load() {
+            var count = 3;
 
+            function updateCountdown() {
+                if (count > 0) {
+                    document.getElementById('countdown').innerText = count;
+                    count--;
+                } else {
+                    window.open('', '_self', '');
+                    window.close();
+                }
+            }
+
+            // Start the countdown
+            setInterval(updateCountdown, 1000);
+        };
+    </script>
+</head>
+<body>
+    <h1>Closing in: <span id="countdown">3</span></h1>
+</body>
+</html>
